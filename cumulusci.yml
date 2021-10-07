@@ -1,0 +1,60 @@
+minimum_cumulusci_version: "3.41.0"
+project:
+  name: angellein
+  package:
+    name: Angellein
+    namespace: angellein
+    api_version: "52.0"
+  git:
+    default_branch: "main"
+    repo_url: https://github.com/SalesforceLabs/Angellein
+  source_format: sfdx
+
+tasks:
+  robot:
+    options:
+      suites: robot/angellein/tests
+      options:
+        outputdir: robot/angellein/results
+
+  robot_testdoc:
+    options:
+      path: robot/angellein/tests
+      output: robot/angellein/doc/angellein_tests.html
+
+  run_tests:
+    options:
+      required_org_code_coverage_percent: 100
+
+flows:
+  config_dev:
+    steps:
+      2:
+        task: None
+      3:
+        task: assign_permission_sets
+        options:
+          api_names:
+            - Angellein_Manage
+      4:
+        task: generate_and_load_from_yaml
+        options:
+          generator_yaml: datasets/snowfakery.yml
+          num_records: 100
+          num_records_tablename: Media_Item__c
+
+  config_managed:
+    steps:
+      2:
+        task: None
+      3:
+        task: assign_permission_sets
+        options:
+          api_names:
+            - Angellein_Manage
+      4:
+        task: generate_and_load_from_yaml
+        options:
+          generator_yaml: datasets/snowfakery.yml
+          num_records: 100
+          num_records_tablename: Media_Item__c

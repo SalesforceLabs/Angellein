@@ -1,0 +1,111 @@
+- object: Contact
+  count: 5
+  fields:
+    FirstName:
+      fake: FirstName
+    LastName:
+      fake: LastName
+- object: Media_Channel__c
+  fields:
+    Location__c:
+      if:
+        - choice:
+            when: ${{ Type__c in ['Community Group', 'Conference'] }}
+            pick:
+              fake: City
+        - choice:
+            pick: NULL
+    Name:
+      fake: Company
+    Submission_URL__c:
+      fake: Url
+    Website__c:
+      fake: Url
+    Type__c:
+      random_choice:
+        - Blog
+        - Community Group
+        - Conference
+        - Online Learning
+        - Podcast
+        - YouTube Channel
+    Internal_Channel__c:
+      random_choice:
+        - False
+        - True
+- object: Media_Item__c
+  count: 5
+  fields:
+    Media_Channel__c:
+      random_reference: Media_Channel__c
+    Title__c:
+      fake: sentence
+    Asset_URL__c:
+      fake: Url
+    Attendance__c:
+      if:
+        - choice:
+            when: ${{ Type__c in ['Presentation', 'Workshop', 'Training', 'Course'] }}
+            pick:
+              random_number:
+                min: 10
+                max: 110
+        - choice:
+            pick: NULL
+    CSAT_Score__c: 4.7
+    Published_Media_URL__c:
+      fake: Url
+    Start_Publication_Date__c:
+      date_between:
+        start_date: 2021-01-01
+        end_date: 2021-12-31
+    Status__c:
+      random_choice:
+        - In Development
+        - Internal Review
+        - Submitted
+        - In Revision
+        - Accepted
+        - Completed
+        - Canceled
+        - Rejected
+    Submission_Date__c:
+      date_between:
+        start_date: 2020-12-01
+        end_date: ${{ Start_Publication_Date__c }}
+    Submission_Materials_URL__c:
+      fake: Url
+    Type__c:
+      random_choice:
+        - Presentation
+        - Workshop
+        - Training
+        - Article
+        - Interview
+        - Course
+    Views__c:
+      if:
+        - choice:
+            when: ${{ Type__c not in ['Presentation', 'Workshop', 'Training', 'Course'] }}
+            pick:
+              random_number:
+                min: 50
+                max: 50000
+        - choice:
+            pick: NULL
+  friends:
+    - object: Media_Item_Role__c
+      count: 2
+      fields:
+        Contact__c:
+          random_reference: Contact
+        Media_Item__c:
+          reference: Media_Item__c
+        Role__c:
+          random_choice:
+            - Speaker
+            - Author
+            - Interviewer
+            - Interviewee
+            - Introducer
+            - Host

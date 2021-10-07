@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Presentation</fullName>
+        <default>false</default>
+        <label>Presentation</label>
+    </customValue>
+    <customValue>
+        <fullName>Workshop</fullName>
+        <default>false</default>
+        <label>Workshop</label>
+    </customValue>
+    <customValue>
+        <fullName>Training</fullName>
+        <default>false</default>
+        <label>Training</label>
+    </customValue>
+    <customValue>
+        <fullName>Article</fullName>
+        <default>false</default>
+        <label>Article</label>
+    </customValue>
+    <customValue>
+        <fullName>Interview</fullName>
+        <default>false</default>
+        <label>Interview</label>
+    </customValue>
+    <customValue>
+        <fullName>Course</fullName>
+        <default>false</default>
+        <label>Course</label>
+    </customValue>
+    <masterLabel>Media Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

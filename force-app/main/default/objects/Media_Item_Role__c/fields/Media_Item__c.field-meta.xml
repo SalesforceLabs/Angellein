@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Media_Item__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The Media Item in which this Contact is involved.</inlineHelpText>
+    <label>Media Item</label>
+    <referenceTo>Media_Item__c</referenceTo>
+    <relationshipLabel>Media Item Roles</relationshipLabel>
+    <relationshipName>Media_Item_Roles</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

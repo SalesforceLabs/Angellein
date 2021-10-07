@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel</fullName>
+    <fields>Name</fields>
+    <fields>Type__c</fields>
+    <fields>Website__c</fields>
+    <fields>Location__c</fields>
+    <fields>Internal_Channel__c</fields>
+    <label>Channel</label>
+</CompactLayout>
