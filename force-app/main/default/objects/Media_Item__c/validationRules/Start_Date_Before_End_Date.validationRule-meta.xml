@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Date_Before_End_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Start_Publication_Date__c)),
+    NOT(ISBLANK(End_Date__c)),
+    Start_Publication_Date__c &gt; End_Date__c 
+)</errorConditionFormula>
+    <errorMessage>Start Date must be prior to End Date.</errorMessage>
+</ValidationRule>

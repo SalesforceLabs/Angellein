@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Open_Media_Items</fullName>
+    <columns>NAME</columns>
+    <columns>Title__c</columns>
+    <columns>Type__c</columns>
+    <columns>Media_Channel__c</columns>
+    <columns>Status__c</columns>
+    <columns>Start_Publication_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Development,Internal Review,Submitted,In Revision,Accepted</value>
+    </filters>
+    <label>My Open Media Items</label>
+</ListView>

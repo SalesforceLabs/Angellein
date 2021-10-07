@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Media_Item</fullName>
+    <fields>Title__c</fields>
+    <fields>Media_Channel__c</fields>
+    <fields>Type__c</fields>
+    <fields>Status__c</fields>
+    <fields>Start_Publication_Date__c</fields>
+    <label>Media Item</label>
+</CompactLayout>
