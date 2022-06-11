@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - feature/**
+      - main
 jobs:
   feature-test:
     runs-on: ubuntu-latest
