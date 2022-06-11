@@ -13,4 +13,4 @@ jobs:
           jwt-private-key: '${{ secrets.SERVER_KEY }}'
           connected-app-client-id: '${{ secrets.CLIENT_ID }}'
           username: '${{ secrets.USERNAME }}'
-          instance-url: 'https://angellein-labs-dev-ed.my.salesforce.com/'
+          instance-url: 'https://angellein-labs-dev-ed.my.salesforce.com'
