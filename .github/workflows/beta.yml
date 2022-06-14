@@ -7,11 +7,13 @@ jobs:
   upload-beta-release-1gp:
     name: "Upload Beta Release (1GP)"
     environment: packaging
+    concurrency: packaging
     runs-on: ubuntu-latest
     steps:
       - uses: cumulusci-actions/release-beta-1gp@main
         with:
-          jwt-private-key: '${{ secrets.SERVER_KEY }}'
-          connected-app-client-id: '${{ secrets.CLIENT_ID }}'
-          username: '${{ secrets.USERNAME }}'
-          instance-url: 'https://angellein-labs-dev-ed.my.salesforce.com'
+          #jwt-private-key: '${{ secrets.SERVER_KEY }}'
+          #connected-app-client-id: '${{ secrets.CLIENT_ID }}'
+          #username: '${{ secrets.USERNAME }}'
+          #instance-url: 'https://angellein-labs-dev-ed.my.salesforce.com'
+          org: '${{ secrets.ORG_JSON }}'
