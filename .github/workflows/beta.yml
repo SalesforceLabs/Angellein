@@ -15,6 +15,8 @@ jobs:
           org: '${{ secrets.ORG_JSON }}'
   beta-test:
     name: "Beta Test"
+    needs:
+      - upload-beta-release-1gp
     runs-on: ubuntu-latest
     steps: 
       - uses: cumulusci-actions/beta-test@main
