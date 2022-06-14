@@ -4,8 +4,8 @@ on:
     branches:    
       - 'main'
 jobs:
-  upload-release-1gp:
-    name: "Upload Release (1GP)"
+  upload-beta-release-1gp:
+    name: "Upload Beta Release (1GP)"
     runs-on: ubuntu-latest
     steps:
       - uses: cumulusci-actions/release-beta-1gp@main
