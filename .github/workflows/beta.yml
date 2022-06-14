@@ -20,3 +20,5 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: cumulusci-actions/beta-test@main
+        with:
+          dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
