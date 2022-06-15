@@ -1,0 +1,21 @@
+name: Build Scratch Org
+on:
+  workflow_dispatch:
+    inputs:
+      flow:
+        description: "Flow to run"
+        required: True
+        default: "qa_org"
+      org-name:
+        description: "Org name"
+        required: True
+        default: "qa"
+jobs:
+  build-org:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: cumulusci-actions/create-scratch-org@main
+        with:
+          dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
+          org-name: ${{ github.event.inputs.org-name }}
+          flow-name: ${{ github.event.inputs.flow }}
