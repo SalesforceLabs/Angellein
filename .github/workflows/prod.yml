@@ -1,6 +1,6 @@
 name: Upload Production Release (1GP)
 on:
-  workflow-dispatch: 
+  workflow_dispatch: 
 jobs:
   upload-production-release-1gp:
     name: "Upload Production Release (1GP)"
