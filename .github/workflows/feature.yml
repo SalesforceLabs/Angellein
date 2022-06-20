@@ -6,6 +6,7 @@ on:
       - main
 jobs:
   feature-test:
+    name: "Feature Test"
     uses: cumulusci-actions/standard-workflows/.github/workflows/feature-2gp.yml@main
     secrets:
       dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
