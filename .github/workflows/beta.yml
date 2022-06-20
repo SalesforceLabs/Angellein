@@ -4,21 +4,8 @@ on:
     branches:    
       - 'main'
 jobs:
-  upload-beta-release-1gp:
-    name: "Upload Beta Release (1GP)"
-    environment: packaging
-    concurrency: packaging
-    runs-on: ubuntu-latest
-    steps:
-      - uses: cumulusci-actions/release-beta-1gp@main
-        with:
-          org: '${{ secrets.ORG_JSON }}'
-  beta-test:
-    name: "Beta Test"
-    needs:
-      - upload-beta-release-1gp
-    runs-on: ubuntu-latest
-    steps: 
-      - uses: cumulusci-actions/beta-test@main
-        with:
-          dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
+  upload-beta:
+    uses: cumulusci-actions/standard-workflows/.github/workflows/beta-1gp.yml@main
+    secrets:
+      org: '${{ secrets.ORG_JSON }}'
+      dev-hub-auth-url: '${{ secrets.DEV_HUB_AUTH_URL }}
