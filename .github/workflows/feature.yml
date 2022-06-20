@@ -6,42 +6,6 @@ on:
       - main
 jobs:
   feature-test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: cumulusci-actions/feature-test@main
-        with:
-          dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
-  feature-test-namespaced:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: cumulusci-actions/feature-test-namespaced@main
-        with:
-          dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
-  feature-test-robot:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: cumulusci-actions/feature-test-robot@main
-        with:
-          dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
-  build-feature-test-package:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: cumulusci-actions/build-feature-test-package@main
-        with:
-          dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
-  feature-test-2gp:
-    runs-on: ubuntu-latest
-    needs:
-      - build-feature-test-package
-    steps:
-      - uses: cumulusci-actions/feature-test-2gp@main
-        with:
-          dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
-  feature-test-robot-2gp:
-    runs-on: ubuntu-latest
-    needs:
-      - build-feature-test-package
-    steps:
-      - uses: cumulusci-actions/feature-test-robot-2gp@main
-        with:
-          dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
+    uses: cumulusci-actions/standard-workflows/.github/workflows/feature-2gp.yml@main
+    secrets:
+      dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
