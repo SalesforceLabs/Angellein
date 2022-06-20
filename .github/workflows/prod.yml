@@ -3,20 +3,7 @@ on:
   workflow_dispatch: 
 jobs:
   upload-production-release-1gp:
-    name: "Upload Production Release (1GP)"
-    environment: packaging
-    concurrency: packaging
-    runs-on: ubuntu-latest
-    steps:
-      - uses: cumulusci-actions/release-production-1gp@main
-        with:
-          org: '${{ secrets.ORG_JSON }}'
-  release-test:
-    name: "Release Test"
-    needs:
-      - upload-production-release-1gp
-    runs-on: ubuntu-latest
-    steps: 
-      - uses: cumulusci-actions/release-test@main
-        with:
-          dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
+    uses: cumulusci-actions/standard-workflows/.github/workflows/production-1gp.yml@main
+    secrets:
+      org: '${{ secrets.ORG_JSON }}'
+      dev-hub-auth-url: '${{ secrets.DEV_HUB_AUTH_URL }}'
