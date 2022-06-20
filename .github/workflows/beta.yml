@@ -5,6 +5,7 @@ on:
       - 'main'
 jobs:
   upload-beta:
+    name: "Upload Beta"
     uses: cumulusci-actions/standard-workflows/.github/workflows/beta-1gp.yml@main
     secrets:
       org: '${{ secrets.ORG_JSON }}'
