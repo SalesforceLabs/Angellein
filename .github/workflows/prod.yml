@@ -3,6 +3,7 @@ on:
   workflow_dispatch: 
 jobs:
   upload-production-release-1gp:
+    name: "Upload Release"
     uses: cumulusci-actions/standard-workflows/.github/workflows/production-1gp.yml@main
     secrets:
       org: '${{ secrets.ORG_JSON }}'
