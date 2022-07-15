@@ -8,5 +8,5 @@ jobs:
     name: "Upload Beta"
     uses: cumulusci-actions/standard-workflows/.github/workflows/beta-1gp.yml@main
     secrets:
-      org: '${{ secrets.ORG_JSON }}'
+      packaging-auth-url: '${{ secrets.PACKAGING_AUTH_URL }}'
       dev-hub-auth-url: '${{ secrets.DEV_HUB_AUTH_URL }}'
