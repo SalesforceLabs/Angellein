@@ -14,8 +14,9 @@ jobs:
   build-org:
     runs-on: ubuntu-latest
     steps:
-      - uses: cumulusci-actions/create-scratch-org@main
+      - uses: cumulusci-actions/create-scratch-org@v1
         with:
           dev-hub-auth-url: ${{ secrets.DEV_HUB_AUTH_URL }}
-          org-name: ${{ github.event.inputs.org-name }}
-          flow-name: ${{ github.event.inputs.flow }}
+          org-name: '${{ github.event.inputs.org-name }}'
+          flow-name: '${{ github.event.inputs.flow }}'
+          commit-status-name: '${{ github.event.inputs.org-name }} Scratch Org'
